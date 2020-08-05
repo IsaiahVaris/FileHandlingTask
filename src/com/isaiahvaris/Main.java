@@ -101,9 +101,9 @@ public class Main {
                 while ((textLine = br.readLine()) != null) {
                     if(textLine.contains("=")) { //indicates key/value pair we need
                         String[] textLineArray = textLine.split("="); //get key/value pair
-                        if ("name".equals(textLineArray[0])) {
+                        if ("name".equals(textLineArray[0]) || "port".equals(textLineArray[0]) || "context-url".equals(textLineArray[0])) {
                             //set application name "name" to pre-defined recognizable key value
-                            textLineArray[0] = "application.name";
+                            textLineArray[0] = "application." + textLineArray[0];
                         } //putIfAbsent to ensure already set value of application name doesn't get overridden
                         configProperties.putIfAbsent(textLineArray[0], textLineArray[1]);
                     }
