@@ -54,7 +54,6 @@ public class Main {
                 System.err.println(filename + " is not a valid config file.\n" +
                         "Please specify:\n config.txt for production, config.txt.dev for development,\n" +
                         "or config.txt.staging for staging environment config file");
-                return;
             } else {
                 this.filename = filename;
                 readConfigFile();
