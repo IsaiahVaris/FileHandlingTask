@@ -1,12 +1,8 @@
 package com.isaiahvaris;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.io.*;
+import java.nio.file.*;
+import java.util.*;
 
 public class ConfigParser {
     private String filename; //name of file to be read
@@ -63,7 +59,9 @@ public class ConfigParser {
         } else {
             fileLocation = "src/com/isaiahvaris/";//...Main
         }
+
         String textLine;
+
         /*try-with-resources block handles exception and automatically closes connection
          * BufferedReader makes it easy to read each line of file
          * relative path ensures file can be found even if working directory changes*/
